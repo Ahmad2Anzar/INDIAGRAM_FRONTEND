@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Signup() {
     const BASE_URL=process.env.REACT_APP_BASE_URL;
+    const googleOAuthCallbackURL = BASE_URL + "/user/auth/google?prompt=select_account";
     const initialFormState = {
         email: '',
         password: '',
@@ -153,7 +154,7 @@ export default function Signup() {
                                 <div className="divider d-flex align-items-center my-4">
                                     <p className="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
                                 </div>
-                                <a className="btn btn-primary btn-lg btn-block" style={{ background: "#3b5998" }} href="http://localhost:8000/user/auth/google"
+                                <a className="btn btn-primary btn-lg btn-block" style={{ background: "#3b5998" }}  href={googleOAuthCallbackURL}
                                     role="button">
                                     SignUp with &nbsp;<i className="fa-brands fa-google"> </i>
                                 </a>

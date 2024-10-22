@@ -7,7 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Login() {
-    const BASE_URL=process.env.REACT_APP_BASE_URL;  
+    const BASE_URL=process.env.REACT_APP_BASE_URL; 
+    const googleOAuthCallbackURL = BASE_URL + "/user/auth/google?prompt=select_account";
     const initialFormState = {
         email: '',
         password: '',
@@ -122,7 +123,7 @@ export default function Login() {
                                     <p className="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
                                 </div>
 
-                                <a className="btn btn-primary btn-lg btn-block" style={{background: "#3b5998"}} href="http://localhost:8000/user/auth/google?prompt=select_account"
+                                <a className="btn btn-primary btn-lg btn-block" style={{background: "#3b5998"}} href={googleOAuthCallbackURL}
                                     role="button">
                                   Login with &nbsp;<i className="fa-brands fa-google"> </i> 
                                 </a>
