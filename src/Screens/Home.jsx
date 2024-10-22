@@ -23,10 +23,10 @@ export default function Home() {
     }
     return null;
   }
-
+  
   const authToken = getCookie('authToken');
   const userEmail = decodeURIComponent(getCookie("userEmail"));
-
+  debugger;
 
   if (!authToken && userEmail) {
     navigate('/login');
